@@ -2,9 +2,11 @@ import os
 import google.generativeai as genai
 from google.generativeai import types
 from flask import Flask, request, jsonify, Response
+from flask_cors import CORS # <--- NEW LINE ADDED
 
 # 1. Set up the Flask App
 app = Flask(__name__)
+CORS(app) # <--- NEW LINE ADDED
 
 # 2. Configure the Gemini Client (happens once when the app starts)
 # It will automatically look for the GEMINI_API_KEY in your hosting environment
